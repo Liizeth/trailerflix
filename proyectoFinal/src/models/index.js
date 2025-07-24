@@ -31,6 +31,19 @@ Actores.belongsToMany(Cartelera, {
 });
 
 
+// Cartelera.js
+Cartelera.belongsToMany(Tag, {
+  through: 'cartelera_tag',
+  foreignKey: 'id_cartelera',
+  otherKey: 'id_tag'
+});
+
+// Tag.js
+Tag.belongsToMany(Cartelera, {
+  through: 'cartelera_tag',
+  foreignKey: 'id_tag',
+  otherKey: 'id_cartelera'
+});
 
 
 module.exports = {

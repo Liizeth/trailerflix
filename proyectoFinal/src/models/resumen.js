@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../database');
+const Cartelera = require('./cartelera'); 
 
 const Resumen = sequelize.define('Resumen', {
     id_cartelera: {

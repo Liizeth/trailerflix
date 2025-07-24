@@ -1,10 +1,11 @@
-const { Cartelera,Categoria,Genero } = require("../database/models");
+const { Cartelera,Categoria,Genero,Resumen } = require("../models");
 const { Op } = require("sequelize"); //importa operadores logicos 
+const Tag = require("../models/tag");
 
 async function categoriaId(nombreCategoria) {
     try {
         const categoria = await Categoria.findOne({
-            where: { nombre: nombreCategoria }
+            where: { categorias: nombreCategoria }
         });
         if (categoria) {
             return categoria.id_categoria; // o categoria.id, según como lo definiste
@@ -22,6 +23,11 @@ async function categoriaId(nombreCategoria) {
 const contarCategoria = async (req, res) => {
     try {
         const nombre = req.params.nombre;
+
+        if (!nombre || nombre.trim() === "") {
+            return res.status(400).json({ error: "Debe ingresar nombre de la categoría" });
+        }
+
         const idCategoria = await categoriaId(nombre);
 
         if (idCategoria === 0) {
@@ -38,64 +44,97 @@ const contarCategoria = async (req, res) => {
     }
 }
 
-
-async function carteleraConGeneroMAYUS() {
+async function carteleraConGeneroMAYUSytag() {
     try {
         const peliculasConGenero = await Cartelera.findAll({
             include: [{
                 model: Genero,
                 attributes: ['tipo_de_genero']
-        }]
-    });
+            },
+            {
+                model: Tag,
+                attributes: ['tag'],
+                through: { attributes: [] } // omite columnas de la tabla intermedia
+            },{
+                model: Resumen,
+                attributes: ['texto']
+            }
 
-        const resultadoMayusculas = peliculasConGenero.map(item => ({
+            ]
+        });
+
+        const resultadoMayusculascontag = peliculasConGenero.map(item => ({
+            
             ...item.dataValues,
             titulo: item.titulo.toUpperCase(),
-            tipo_de_genero: item.Genero.tipo_de_genero.toUpperCase()
+            tipo_de_genero: item.Genero.tipo_de_genero.toUpperCase(),
+            Tags:item.Tags.map(tag => tag.tag).join(', '),
+            texto: item.Resumen?.texto || ""
         }));
 
-        return async function carteleraConGeneroMAYUS() {
-    try {
-        const peliculasConGenero = await Cartelera.findAll({
-            include: [{
-                model: Genero,
-                attributes: ['tipo_de_genero']
-        }]
-    });
-
-        const resultadoMayusculas = peliculasConGenero.map(item => ({
-            ...item.dataValues,
-            titulo: item.titulo.toUpperCase(),
-            tipo_de_genero: item.Genero.tipo_de_genero.toUpperCase()
-        }));
-
-        return resultadoMayusculas;
+        return resultadoMayusculascontag;
     } catch (error) {
         console.error("Error al obtener películas con género:", error);
         throw error;
     }
 };
-    } catch (error) {
-        console.error("Error al obtener películas con género:", error);
-        throw error;
-    }
-}
+
 
 
 
 
 
 const mostrarCategoria = async (req, res) => {
-    const resultado = await carteleraConGenero();
-    const resultadoMayusculas = resultado.map(item => ({
-        ...item.dataValues, // para copiar todos los campos originales
-        titulo: item.titulo.toUpperCase(), // título en mayúsculas
-        tipo_de_genero: item.tipo_de_genero.toUpperCase()
-    }));
+    try {
+        const nombre = req.params.nombre;
 
+        if (!nombre || nombre.trim() === "") {
+            return res.status(400).json({ error: "Debe ingresar nombre de la categoría" });
+        }
+
+        const idCategoria = await categoriaId(nombre);
+
+        if (idCategoria === 0) {
+            return res.status(404).json({ error: "Categoría no encontrada" });
+        }
+
+        const resultado = await carteleraConGeneroMAYUSytag();
+
+        if (idCategoria === 1) { //es serie
+            const series = resultado.filter(item => item.id_categoria && item.id_categoria === 1); //solo agarra las series
+
+            const resul = series.map(({ titulo, tipo_de_genero, Tags,  temporada, trailer, texto }) => ({
+                titulo,
+                tipo_de_genero,
+                Tags,
+                temporada,
+                trailer,
+                texto
+            }));
+
+            res.status(200).json(resul);
+
+        }
+
+        if (idCategoria === 2) { // es pelicula 
+          // Filtrar solo las que sean peliculas
+            const series = resultado.filter(item => item.id_categoria && item.id_categoria === 2);
+
+          // Luego devolver solo los campos que querés
+            const resul = series.map(({ titulo, tipo_de_genero, Tags, duracion, trailer }) => ({
+                titulo,
+                tipo_de_genero,
+                Tags,
+                duracion,
+                trailer
+            }));
+        
+            res.status(200).json(resul);
+        }
+    } catch (error) {
+        res.status(500).json({ error: "Error del servidor" });
+    }
 }
-
-
 
 module.exports = {
     contarCategoria,
