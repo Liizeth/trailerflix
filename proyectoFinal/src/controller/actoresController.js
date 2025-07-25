@@ -79,16 +79,21 @@ const mostrarPeli = async (req, res) => {
       return res.status(500).json({ error: "No se obtuvieron resultados" });
     }
 
+
+    //con flatMap  te devolvería un array de arrays (uno por actor)
+    //cada actor con las pelis que tiene
     const camposPedidos = resultados.flatMap(actor => {
       //console.log(Object.keys(actor)); // para ver propiedades
       //console.log(actor);
 
-      if (!actor.Carteleras) return [];
+      if (!actor.Carteleras) return [];//si ese actor no tiene películas o series asociadas (Carteleras),
+      //  simplemente no devuelve nada para ese actor.
 
       return actor.Carteleras.map(cartelera => ({
         nombre_completo: `${actor.nombre} ${actor.apellido}`,
         titulo: cartelera.titulo,
         genero: cartelera.Genero ? cartelera.Genero.tipo_de_genero : 'Desconocido',
+        //aca nose porque nunca me aparece la categoria por eso puse 'Desconocido' para que no tire error
         categoria: cartelera.Categoria ? cartelera.Categoria.categorias : 'Desconocido',
       }));
     });
