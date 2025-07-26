@@ -1,4 +1,4 @@
 # trailerflix
 
 ## Modelo Trailerflix
-![BD]()
+![BD](proyectoFinal/diagramaDB/diagramaDB.png)
