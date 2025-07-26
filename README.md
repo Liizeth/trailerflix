@@ -10,30 +10,19 @@
     - [Obtener una lista de películas por género](#-obtener-una-lista-de-películas-por-género)
     - [Obtener películas con los tags "Aventura" y "Ciencia Ficción", o "Aventura" y "Fantasía"](#-obtener-películas-con-tags)
     - [Visualizar títulos y categorías cuyo resumen contenga la palabra "misión"](#-resúmenes-con-misión)
-    - [Listar las series con al menos 3 temporadas](#4-series-con-al-menos-3-temporadas)
-    - [Contar cuántas películas/series trabajó el actor Chris Pratt](#5-trabajos-de-chris-pratt)
-    - [Mostrar nombre completo de actrices/actores con título, categoría y género](#6-actores-con-datos-de-trabajos)
+    - [Listar las series con al menos 3 temporadas](#-series-con-al-menos-3-temporadas)
+    - [Contar cuántas películas/series trabajó el actor Chris Pratt](#-contar-cuántas-películas/series-trabajó-el-actor)
+    - [Mostrar nombre completo de actrices/actores con título, categoría y género](#-actores-con-datos-de-trabajos)
     - [Ver solo películas](#-ver-películas/series)
-        - mostrar título en mayúsculas, género en mayúsculas, tags separados por coma, duración y enlace al tráiler.
     - [Ver solo series ](#-ver-películas/series)
-        - mostrar título en mayúsculas, género en mayúsculas, tags separados por coma, cantidad de temporadas, tráiler y resumen.
-    - [Película/serie con más y menos actores](#9-más-y-menos-actores)
-        - indicando la cantidad en cada caso.
+    - [Película/serie con más y menos actores](#-película/serie-con-más-y-menos-actores)
     - [Contar la cantidad total de películas](#-contar-la-cantidad-total-de-películas/series)
     - [Contar la cantidad total de series](#-contar-la-cantidad-total-de-películas/series)
-    - [Listar las series en orden descendente por cantidad de temporadas]()
-    - [Agregar el campo fecha_lanzamiento (tipo DATE) a la tabla de trabajos fílmicos]()
-        - actualizar las fechas de los títulos del género "Aventura"
-    - [Buscar películas por palabra clave en título o descripción ]()
-    - [Agregar una tabla "Ranking"]()
-        - con ID de película/serie, calificación y comentarios.
-    - []()
-    
-        - [Listado de Titulos](#listado-de-titulos)
-        - [Busqueda de Titulo](#busqueda-de-titulo)
-        
-
-------
+    - [Listar las series en orden descendente](-listar-las-series-en-orden-descendente)
+    - [Agregar el campo fecha de lanzamiento](-agregar-el-campo-fecha-de-lanzamiento)
+    - [Buscar películas por palabra ](#-buscar-películas-por-palabra)
+    - [Agregar una tabla Ranking](#-agregar-una-tabla-ranking)
+  ------
 
 
 ## 🚀 Tecnologías usadas
@@ -75,21 +64,21 @@ Ejemplo de las variables necesarias:
 ### 🎬 Obtener una lista de películas por género
 ### 🧭 Obtener películas con los tags
 ### 🕵️‍♀️ Resúmenes con "misión"
-### 📺
-### 👤
-### 🎭
+### 📺 Series con al menos 3 temporadas
+### 👤Contar cuántas películas/series trabajó el actor
+### 🎭 Actores con datos de trabajos
 ### 🔠 Ver películas/series
 7. Ver solo la categoría **"Películas"**:  
    mostrar título en mayúsculas, género en mayúsculas, tags separados por coma, duración y enlace al tráiler.
 8. Ver solo la categoría **"Series"**: 
-### 👥
+### 👥 Película/serie con más y menos actores
 ### 🎞️ Contar la cantidad total de películas/series
 10. Contar la cantidad total de **películas** registradas.
 11. Contar la cantidad total de **series** registradas.
-### 🔢
-### 🗓️
-### 🔍
-### 🏆
+### 🔢 Listar las series en orden descendente
+### 🗓️ Agregar el campo fecha de lanzamiento
+### 🔍 Buscar películas por palabra
+### 🏆 Agregar una tabla Ranking 
 
 
 
