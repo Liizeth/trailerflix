@@ -66,7 +66,10 @@ Ejemplo de las variables necesarias:
 1. Obtener una lista de películas por género (por ejemplo: **"Acción"**, **"Terror"**, **"Suspenso"**).
 
 ```
-GET  /ingenias
+GET  /ingenias/pelisGenero/nombre_del_genero
+```
+```
+dado un nombre de un genero se muestran las peliculas de este 
 ```
 
 ### 🧭 Obtener películas con los tags
