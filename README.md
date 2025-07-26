@@ -72,9 +72,9 @@ Ejemplo de las variables necesarias:
 
 ## 🧮 Consultas SQL
 
-### 🎬Obtener una lista de películas por género
-### 🧭Obtener películas con los tags
-### 🕵️‍♀️Resúmenes con "misión"
+### 🎬 Obtener una lista de películas por género
+### 🧭 Obtener películas con los tags
+### 🕵️‍♀️ Resúmenes con "misión"
 ### 📺
 ### 👤
 ### 🎭
