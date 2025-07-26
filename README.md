@@ -62,23 +62,128 @@ Ejemplo de las variables necesarias:
 ## 🧮 Consultas SQL
 
 ### 🎬 Obtener una lista de películas por género
+
+1. Obtener una lista de películas por género (por ejemplo: **"Acción"**, **"Terror"**, **"Suspenso"**).
+
+```
+GET  /ingenias
+```
+
 ### 🧭 Obtener películas con los tags
+
+2. Obtener películas con los tags **"Aventura" y "Ciencia Ficción"**, o **"Aventura" y "Fantasía"**.
+```
+GET  /ingenias
+```
+
 ### 🕵 Resúmenes con "misión"
+
+3. Visualizar títulos y categorías cuyo resumen contenga la palabra **"misión"**. 
+
+```
+GET  /ingenias/rutasCate/mision/palabra_a_buscar
+```
+```
+ dado una palabra busca en los resumenes y muestra sus  pelis/series  correspondientes
+```
+
+
 ### 📺 Series con al menos 3 temporadas
+4. Listar las series con **al menos 3 temporadas**.
+
+```
+GET  /ingenias/rutasCate/seriesTem
+```
+
 ### 👤 Contar cuántas películas/series trabajó el actor
+
+5. Contar cuántas películas/series trabajó el actor **Chris Pratt**.
+
+```
+GET   /ingenias/rutasAct/contar/Nombre_del_actor
+```
+```
+da como resultado la cantidad de pelis/series en las que participo el actor
+```
+
 ### 🎭 Actores con datos de trabajos
+
+6. Mostrar nombre completo de actrices/actores junto a:  título de los trabajos, categoría y género.
+```
+GET    /ingenias/rutasAct/mostar
+```
+```
+da como resultado todos los actores junto a sus pelis/series
+```
 ### 🔠 Ver películas/series
+
 7. Ver solo la categoría **"Películas"**:  
    mostrar título en mayúsculas, género en mayúsculas, tags separados por coma, duración y enlace al tráiler.
-8. Ver solo la categoría **"Series"**: 
+8. Ver solo la categoría **"Series"**:
+   mostrar título en mayúsculas, género en mayúsculas, tags separados por coma, cantidad de temporadas, tráiler y resumen.
+```
+GET   /ingenias/rutasCat/Nombre_de_categoria
+```
+
+```
+muestra las pelis/series de la categoria dada
+en este caso solo se limita a las categorias "Películas" y "Serie"
+
+```
+
+
 ### 👥 Película/serie con más y menos actores
+
+9. Identificar la película/serie con **más actores** y la que tiene **menos actores**, indicando la cantidad en cada caso.
+
+```
+GET  /ingenias
+```
+
 ### 🎞️ Contar la cantidad total de películas/series
+
 10. Contar la cantidad total de **películas** registradas.
 11. Contar la cantidad total de **series** registradas.
+ ```
+GET  /ingenias/rutasCat/contar/nombre_de_categoria
+ ```
+
+``` 
+da como resultado la cantidad de la series/peli que existen de la categoria dada
+
+``` 
+
 ### 🔢 Listar las series en orden descendente
+
+12. Listar las series en orden **descendente por cantidad de temporadas**.
+
+```
+GET  /ingenias
+```
+
 ### 🗓️ Agregar el campo fecha de lanzamiento
+
+13. Agregar el campo `fecha_lanzamiento` (tipo `DATE`) a la tabla de trabajos fílmicos y actualizar las fechas de los títulos del género **"Aventura"**.
+
+```
+GET  /ingenias
+```
+
 ### 🔍 Buscar películas por palabra
+
+14. Buscar películas por **palabra clave** en título o descripción (por ejemplo: **"Aventura"**, **"madre"**, **"Ambientada"**).
+
+```
+GET  /ingenias
+```
+
 ### 🏆 Agregar una tabla Ranking 
+
+15. Agregar una tabla **"Ranking"** con: ID de película/serie, calificación y comentarios.  
+
+```
+GET  /ingenias
+```
 
 
 
