@@ -63,7 +63,7 @@ Ejemplo de las variables necesarias:
 
 ### 🎬 Obtener una lista de películas por género
 ### 🧭 Obtener películas con los tags
-### 🕵️‍♀️ Resúmenes con "misión"
+### 🕵 Resúmenes con "misión"
 ### 📺 Series con al menos 3 temporadas
 ### 👤Contar cuántas películas/series trabajó el actor
 ### 🎭 Actores con datos de trabajos
