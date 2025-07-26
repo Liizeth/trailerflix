@@ -70,26 +70,26 @@ Ejemplo de las variables necesarias:
 | `DB_DIALECT`   | Dialecto utilizado por Sequelize | `mysql`     |
 
 
-##🧮 Consultas SQL
+## 🧮 Consultas SQL
 
-###🎬Obtener una lista de películas por género
-###🧭Obtener películas con los tags
-###🕵️‍♀️Resúmenes con "misión"
-###📺
-###👤
-###🎭
-###🔠 Ver películas/series
+### 🎬Obtener una lista de películas por género
+### 🧭Obtener películas con los tags
+### 🕵️‍♀️Resúmenes con "misión"
+### 📺
+### 👤
+### 🎭
+### 🔠 Ver películas/series
 7. Ver solo la categoría **"Películas"**:  
    mostrar título en mayúsculas, género en mayúsculas, tags separados por coma, duración y enlace al tráiler.
 8. Ver solo la categoría **"Series"**: 
-###👥
-###🎞️ Contar la cantidad total de películas/series
+### 👥
+### 🎞️ Contar la cantidad total de películas/series
 10. Contar la cantidad total de **películas** registradas.
 11. Contar la cantidad total de **series** registradas.
-###🔢
-###🗓️
-###🔍
-###🏆
+### 🔢
+### 🗓️
+### 🔍
+### 🏆
 
 
 
