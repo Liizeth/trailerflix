@@ -8,7 +8,7 @@
   - [Variables de entorno](#-variables-de-entorno)
   - [Consultas SQL:](#-consultas-sql)
     - [Obtener una lista de películas por género](#-obtener-una-lista-de-películas-por-género)
-    - [Obtener películas con los tags "Aventura" y "Ciencia Ficción", o "Aventura" y "Fantasía"](#-obtener-películas-con-tags)
+    - [Obtener películas con los tags "Aventura" y "Ciencia Ficción", o "Aventura" y "Fantasía"](#-obtener-películas-con-los-tags)
     - [Visualizar títulos y categorías cuyo resumen contenga la palabra "misión"](#-resúmenes-con-misión)
     - [Listar las series con al menos 3 temporadas](#-series-con-al-menos-3-temporadas)
     - [Contar cuántas películas/series trabajó el actor Chris Pratt](#-contar-cuántas-películas/series-trabajó-el-actor)
