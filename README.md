@@ -65,7 +65,7 @@ Ejemplo de las variables necesarias:
 ### 🧭 Obtener películas con los tags
 ### 🕵 Resúmenes con "misión"
 ### 📺 Series con al menos 3 temporadas
-### 👤Contar cuántas películas/series trabajó el actor
+### 👤 Contar cuántas películas/series trabajó el actor
 ### 🎭 Actores con datos de trabajos
 ### 🔠 Ver películas/series
 7. Ver solo la categoría **"Películas"**:  
