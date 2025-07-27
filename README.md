@@ -76,8 +76,13 @@ dado un nombre de un genero se muestran las peliculas de este
 
 2. Obtener películas con los tags **"Aventura" y "Ciencia Ficción"**, o **"Aventura" y "Fantasía"**.
 ```
-GET  /ingenias
+GET  /ingenias/peliTags/nombre_tag1/ombre_tag2
 ```
+```
+dado dos nombres de  tag muestra muestra las peliculas que los contengan 
+
+```
+
 
 ### 🕵 Resúmenes con "misión"
 
@@ -161,7 +166,7 @@ da como resultado la cantidad de la series/peli que existen de la categoria dada
 12. Listar las series en orden **descendente por cantidad de temporadas**.
 
 ```
-GET  /ingenias
+GET  /ingenias/rutasCate/ordenDesc
 ```
 
 ### 🗓️ Agregar el campo fecha de lanzamiento
@@ -177,7 +182,7 @@ GET  /ingenias
 14. Buscar películas por **palabra clave** en título o descripción (por ejemplo: **"Aventura"**, **"madre"**, **"Ambientada"**).
 
 ```
-GET  /ingenias
+GET  /ingenias/rutasCate/buscar/palabra_a_buscar
 ```
 
 ### 🏆 Agregar una tabla Ranking 
