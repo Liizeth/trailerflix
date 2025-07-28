@@ -11,13 +11,13 @@
     - [Obtener películas con los tags "Aventura" y "Ciencia Ficción", o "Aventura" y "Fantasía"](#-obtener-películas-con-los-tags)
     - [Visualizar títulos y categorías cuyo resumen contenga la palabra "misión"](#-resúmenes-con-misión)
     - [Listar las series con al menos 3 temporadas](#-series-con-al-menos-3-temporadas)
-    - [Contar cuántas películas/series trabajó el actor Chris Pratt](#-contar-cuántas-películas/series-trabajó-el-actor)
+    - [Contar cuántas películas o series trabajó el actor Chris Pratt](#-contar-cuántas-películas-o-series-trabajó-el-actor)
     - [Mostrar nombre completo de actrices/actores con título, categoría y género](#-actores-con-datos-de-trabajos)
-    - [Ver solo películas](#-ver-películas/series)
-    - [Ver solo series ](#-ver-películas/series)
-    - [Película/serie con más y menos actores](#-película/serie-con-más-y-menos-actores)
-    - [Contar la cantidad total de películas](#-contar-la-cantidad-total-de-películas/series)
-    - [Contar la cantidad total de series](#-contar-la-cantidad-total-de-películas/series)
+    - [Ver solo películas](#-ver-películas-o-series)
+    - [Ver solo series ](#-ver-películas-o-series)
+    - [Película/serie con más y menos actores](#-película-o-serie-con-más-y-menos-actores)
+    - [Contar la cantidad total de películas](#-contar-la-cantidad-total-de-películas-o-series)
+    - [Contar la cantidad total de series](#-contar-la-cantidad-total-de-películas-o-series)
     - [Listar las series en orden descendente](-listar-las-series-en-orden-descendente)
     - [Agregar el campo fecha de lanzamiento](-agregar-el-campo-fecha-de-lanzamiento)
     - [Buscar películas por palabra ](#-buscar-películas-por-palabra)
@@ -103,7 +103,7 @@ GET  /ingenias/rutasCate/mision/palabra_a_buscar
 GET  /ingenias/rutasCate/seriesTem
 ```
 
-### 👤 Contar cuántas películas/series trabajó el actor
+### 👤 Contar cuántas películas o series trabajó el actor
 
 5. Contar cuántas películas/series trabajó el actor **Chris Pratt**.
 
@@ -123,7 +123,7 @@ GET    /ingenias/rutasAct/mostar
 ```
 da como resultado todos los actores junto a sus pelis/series
 ```
-### 🔠 Ver películas/series
+### 🔠 Ver películas o series
 
 7. Ver solo la categoría **"Películas"**:  
    mostrar título en mayúsculas, género en mayúsculas, tags separados por coma, duración y enlace al tráiler.
@@ -148,7 +148,7 @@ en este caso solo se limita a las categorias "Películas" y "Serie"
 GET  /ingenias
 ```
 
-### 🎞️ Contar la cantidad total de películas/series
+### 🎞️ Contar la cantidad total de películas o series
 
 10. Contar la cantidad total de **películas** registradas.
 11. Contar la cantidad total de **series** registradas.
@@ -187,7 +187,7 @@ GET  /ingenias/rutasCate/buscar/palabra_a_buscar
 
 ### 🏆 Agregar una tabla Ranking 
 
-15. Agregar una tabla **"Ranking"** con: ID de película/serie, calificación y comentarios.  
+15. Agregar una tabla **"Ranking"** con: ID de película o serie, calificación y comentarios.  
 
 ```
 GET  /ingenias
