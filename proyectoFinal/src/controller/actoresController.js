@@ -35,8 +35,8 @@ const contarRepartoAct = async (req, res) => {
         if (idActor === null) {
             return res.status(404).json({ error: "Actor no encontrado" });
         }
-        //
-        console.log (`id el actor   ${idActor}`);
+        
+        //console.log (`id el actor   ${idActor}`);
         const resultados = await Reparto.count({ where: { id_actor: idActor } });
         res.status(200).json(resultados);
 
@@ -94,6 +94,8 @@ const mostrarPeli = async (req, res) => {
         titulo: cartelera.titulo,
         genero: cartelera.Genero ? cartelera.Genero.tipo_de_genero : 'Desconocido',
         //aca nose porque nunca me aparece la categoria por eso puse 'Desconocido' para que no tire error
+        //sospecho que es un error de cuando combine las tablas! 
+        //pero todavia no encontre el error...asi que categoria desconocida para todas y listo! pa que funcione
         categoria: cartelera.Categoria ? cartelera.Categoria.categorias : 'Desconocido',
       }));
     });
