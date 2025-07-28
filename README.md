@@ -15,7 +15,7 @@
     - [Mostrar nombre completo de actrices/actores con título, categoría y género](#-actores-con-datos-de-trabajos)
     - [Ver solo películas](#-ver-películasseries)
     - [Ver solo series ](#-ver-películasseries)
-    - [Película/serie con más y menos actores](#-película-o-serie-con-más-y-menos-actores)
+    - [Película/serie con más y menos actores](#-películaserie-con-más-y-menos-actores)
     - [Contar la cantidad total de películas](#-contar-la-cantidad-total-de-películasseries)
     - [Contar la cantidad total de series](#-contar-la-cantidad-total-de-películasseries)
     - [Listar las series en orden descendente](-listar-las-series-en-orden-descendente)
