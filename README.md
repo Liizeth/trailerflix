@@ -38,8 +38,10 @@ Este proyecto fue desarrollado utilizando las siguientes tecnologías:
 
 
 ## 📊 Modelo Trailerflix
+
+[Creacion de tablas](diagramaDB/trailerflixDB.sql)
 <div style="text-align: center;">
-  <img src="proyectoFinal/diagramaDB/diagramaDB.png" alt="Diagrama de base de datos" width="600"/>
+  <img src="diagramaDB/diagramaDB.png" alt="Diagrama de base de datos" width="600"/>
 </div>
 
 ## 🔐 Variables de entorno
@@ -211,11 +213,14 @@ GET  /ingenias/rutasCate/buscar/palabra_a_buscar
 
 15. Agregar una tabla **"Ranking"** con: ID de película o serie, calificación y comentarios.  
 
-```
 
 ```
 
-
+```
+#### Diagrama despues de agregar la tabla 
+<div style="text-align: center;">
+  <img src="diagramaDB/diagrama2DB.png" alt="Diagrama de base de datos" width="600"/>
+</div>
 
 ## 👩‍💻 Autor
  [Lizeth](https://github.com/Liizeth/) 🦋<br> 
