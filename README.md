@@ -16,8 +16,8 @@
     - [Ver solo películas](#-ver-películasseries)
     - [Ver solo series ](#-ver-películasseries)
     - [Película/serie con más y menos actores](#-película-o-serie-con-más-y-menos-actores)
-    - [Contar la cantidad total de películas](#contar-la-cantidad-total-de-películasseries)
-    - [Contar la cantidad total de series](#--contar-la-cantidad-total-de-películasseries)
+    - [Contar la cantidad total de películas](#-contar-la-cantidad-total-de-películasseries)
+    - [Contar la cantidad total de series](#-contar-la-cantidad-total-de-películasseries)
     - [Listar las series en orden descendente](-listar-las-series-en-orden-descendente)
     - [Agregar el campo fecha de lanzamiento](-agregar-el-campo-fecha-de-lanzamiento)
     - [Buscar películas por palabra ](#-buscar-películas-por-palabra)
@@ -171,7 +171,7 @@ en este caso solo se limita a las categorias "Películas" y "Serie"
 GET  /ingenias
 ```
 
-### 🎞️ Contar la cantidad total de películas/series
+### 🎬 Contar la cantidad total de películas/series
 
 10. Contar la cantidad total de **películas** registradas.
 11. Contar la cantidad total de **series** registradas.
