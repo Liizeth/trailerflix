@@ -58,7 +58,30 @@ Ejemplo de las variables necesarias:
 | `DB_NAME`      | Nombre de la base de datos     | `carteleradb`  |
 | `DB_DIALECT`   | Dialecto utilizado por Sequelize | `mysql`     |
 
+## 📁 Estructura de los endpoint
 
+```
+/ingenias
+├── /rutaCat
+│   └── /:nombre                              →
+│   └── /contar/:nombre                       →
+│
+├── /rutasAct
+│   └── /contar/:nombre                       →
+│   └── /mostrar                              →
+│
+├── /rutasCate
+│   └── /mision/:palabra                      →
+│   └── /pelisGenero/:genero                  →
+│   └── /serieTem                             →
+│   └── /ordenDesc                            →
+│   └── /buscar/:palabra                      →
+│   └── /                    →
+│   └── /                    →
+│   └── /                    →
+│   └── /                    →
+│   └── /                    →
+```
 ## 🧮 Consultas SQL
 
 ### 🎬 Obtener una lista de películas por género
