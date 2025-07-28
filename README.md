@@ -77,7 +77,7 @@ Ejemplo de las variables necesarias:
 │   └── /ordenDesc                            → muestra las series en orden descendente segun la cantidad de temporadas
 │   └── /buscar/:palabra                      → muestra las peliculas cuya palabra ingresada este en su titulo o descripcion 
 │   └── /peliTags/:tag1/:tag2                 → muestra las peliculas que contengas uno o ambos tags ingresados 
-│   └── /                    →
+│   └── /actFechaL/:genero                   → actualiza la fecha de lanzamiento del las pelis/series del genero ingresado 
 │   └── /                    →
 │   └── /                    →
 │   └── /                    →
@@ -197,7 +197,7 @@ GET  /ingenias/rutasCate/ordenDesc
 13. Agregar el campo `fecha_lanzamiento` (tipo `DATE`) a la tabla de trabajos fílmicos y actualizar las fechas de los títulos del género **"Aventura"**.
 
 ```
-GET  /ingenias
+GET  /ingenias/rutasCate/actFechaL/:genero
 ```
 
 ### 🔍 Buscar películas por palabra
