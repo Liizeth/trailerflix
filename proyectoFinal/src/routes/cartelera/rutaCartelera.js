@@ -8,7 +8,8 @@ const {
     peliTag,
     temDescenciente,
     buscarPalabra,
-    maxmin} = require("../../controller/carteleraController.js");
+    maxmin,
+    actLanzamiento} = require("../../controller/carteleraController.js");
 
 router.get("/seriesTem",series);
 
@@ -27,6 +28,8 @@ router.get("/ordenDesc",temDescenciente);
 
 router.get("/buscar/:palabra",buscarPalabra);
 
-router.get("/maxmin",maxmin);
+router.get("/maxMin",maxmin);
+
+router.get("/actFechaL/:genero",actLanzamiento);
 
 module.exports = router;

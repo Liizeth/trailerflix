@@ -6,6 +6,7 @@ const Cartelera_Tag = require("./cartelera_tag");
 const Categoria = require("./categoria");
 const Resumen = require("./resumen");
 const Reparto = require("./reparto");
+const Comentario = require("./comentario");
 
 //relacion entre cartelera y los id de genero y categoria
 Cartelera.belongsTo(Genero, { foreignKey: 'id_genero' });
@@ -46,6 +47,12 @@ Tag.belongsToMany(Cartelera, {
 });
 
 
+// Un comentario pertenece a una sola cartelera
+Comentario.belongsTo(Cartelera, { foreignKey: 'id_cartelera' });
+
+// Una cartelera tiene muchos comentarios
+Cartelera.hasMany(Comentario, { foreignKey: 'id_cartelera' });
+
 module.exports = {
     Cartelera,
     Genero,
@@ -54,5 +61,6 @@ module.exports = {
     Cartelera_Tag,
     Categoria,
     Resumen,
-    Reparto
+    Reparto,
+    Comentario
 }

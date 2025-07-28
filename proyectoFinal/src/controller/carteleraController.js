@@ -1,6 +1,7 @@
 const { Cartelera, Categoria, Resumen, Genero, Tag, Cartelera_Tag, Reparto } = require("../models");
-const { Op } = require("sequelize"); //importa operadores logicos 
-const { Sequelize } = require('sequelize');
+const { Op, fn, col } = require("sequelize"); //importa operadores logicos 
+const {sequelize} = require("../database.js");
+
 
 const series = async (req,res)=>{
     try{
@@ -261,15 +262,12 @@ const temDescenciente = async (req, res) => {
     })
     res.status(200).json(resul);
   }catch(error){
-    console.error("Error en la ruta /mision:", error);
+    console.error("Error en la ruta /temp3:", error);
     res.status(500).json({ error: "Error del servidor en /temDescendiente" });
   }
 
 }
 
-//esta funcion nose si funciona, 
-//porque si le pongo una palabra que no esta retorna rapido que no hay pelis/series
-//pero si le pongo una palabra que si esta (ejem en el titulo) se que da procesando y nunca devulve (o es mucho para mi compu)
 
 const buscarPalabra = async (req, res) => {
   try {
@@ -305,8 +303,10 @@ const buscarPalabra = async (req, res) => {
     if (resultados.length === 0) {
       return res.status(404).json({ error: `No hay series/películas con la palabra " ${palabra} " en el titulo/resumen` });
     }
+
+    res.status(200).json(resultados);
   }catch(error){
-    console.error("Error en la ruta /mision:", error);
+    console.error("Error en la ruta /buscar palabra:", error);
     res.status(500).json({ error: "Error del servidor en /bucarPalabra" });
   }
 
@@ -314,49 +314,89 @@ const buscarPalabra = async (req, res) => {
 
 }
 
-async function idMin (){
-  const resultado = Reparto
+//async function idMin (){
+//  const resultado = Reparto
+//
+//}
+//
+//async function idMax (){
+//}
+//
+const actLanzamiento = async (req, res) => {
+  try{
+    const generoBuscar= req.params.genero;
 
+    if (!generoBuscar || generoBuscar.trim() === "") {
+        return res.status(400).json({ error: "Debe ingresar nombre del genero a buscar" });
+    }
+
+    const idGenero = await buscarIdGenero(generoBuscar); //reutiliza la funcion 
+
+    if (!idGenero || typeof idGenero !== "number") {
+        return res.status(404).json({ error: "Genero no encontrado" });
+    }
+    
+    
+    const hoy = new Date(); //toma la fecha de hoy para actualizar la fecha de lanzamiento
+    //podria ser pasada (ingresada) por parametro 
+    //const hoy = new Date(); con hora 
+    hoy.setHours(0, 0, 0, 0);//sin hora
+
+   // modifica
+  const muestaModificados = await Cartelera.update(//en update se necesita dos parametro (campo a modificar) y (condicion)
+    { fecha_lanzamiento: hoy }, // valores a modificar 
+    {
+      where: {
+        id_genero: idGenero // condición
+      }
+    }
+  );
+
+
+    
+    res.status(200).json(muestaModificados);
+  }catch (error){
+    console.error("Error en la ruta /fecha:", error);
+    res.status(500).json({ error: "Error del servidor en /actLanzamiento" });
+  }
 }
-
-async function idMax (){
-}
-
-
 
 
 const maxmin = async (req, res) => {
   try {
-    const resultados = await Cartelera.findAll({
+    // Más actores
+    const maxActores = await Cartelera.findOne({
       attributes: [
+        'id',
         'titulo',
-        [Sequelize.fn('COUNT', Sequelize.col('Repartos.id_actor')), 'cantidad']
+        [sequelize.fn('COUNT', sequelize.col('Reparto.id_actor')), 'cantidad_actores']
       ],
-      include: [{
-        model: Reparto,
-        attributes: []
-      }],
+      include: [{ model: Reparto, attributes: [] }],
       group: ['Cartelera.id'],
-      order: [[Sequelize.literal('cantidad'), 'DESC']]
+      order: [[sequelize.fn('COUNT', sequelize.col('Reparto.id_actor')), 'DESC']],
+      limit: 1
     });
 
-    const conMasActores = resultados[0];
-    const conMenosActores = resultados[resultados.length - 1];
+    // Menos actores
+    const minActores = await Cartelera.findOne({
+      attributes: [
+        'id',
+        'titulo',
+        [sequelize.fn('COUNT', sequelize.col('Reparto.id_actor')), 'cantidad_actores']
+      ],
+      include: [{ model: Reparto, attributes: [] }],
+      group: ['Cartelera.id'],
+      order: [[sequelize.fn('COUNT', sequelize.col('Reparto.id_actor')), 'ASC']],
+      limit: 1
+    });
 
     res.status(200).json({
-      conMasActores: {
-        titulo: conMasActores.titulo,
-        cantidad: parseInt(conMasActores.dataValues.cantidad)
-      },
-      conMenosActores: {
-        titulo: conMenosActores.titulo,
-        cantidad: parseInt(conMenosActores.dataValues.cantidad)
-      }
+      peliculaConMasActores: maxActores,
+      peliculaConMenosActores: minActores
     });
-
   } catch (error) {
-    console.error('Error al obtener datos:', error);
-    res.status(500).json({ error: 'Error al obtener películas/series con más y menos actores' });
+    console.error('Error al obtener máximo y mínimo:', error);
+    res.status(500).json({ error: 'Error interno del servidor /maxMin' });
   }
 };
 
@@ -369,5 +409,6 @@ module.exports = {
     peliTag,
     maxmin,
     temDescenciente,
-    buscarPalabra
+    buscarPalabra,
+    actLanzamiento
 }

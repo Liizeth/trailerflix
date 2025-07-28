@@ -35,6 +35,11 @@ const Cartelera = sequelize.define('Cartelera', {
     id_categoria: {
         type: DataTypes.INTEGER,
         allowNull: false
+    },
+    // campo nuevo
+    fecha_lanzamiento: {
+        type: DataTypes.DATE, 
+        allowNull: true       
     }
 }, {
         tableName: 'cartelera',
