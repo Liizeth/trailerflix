@@ -221,6 +221,6 @@ GET  /ingenias/rutasCate/buscar/palabra_a_buscar
 <div style="text-align: center;">
   <img src="diagramaDB/diagrama2DB.png" alt="Diagrama de base de datos" width="600"/>
 </div>
-
+  
 ## 👩‍💻 Autor
  [Lizeth](https://github.com/Liizeth/) 🦋
