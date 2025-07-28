@@ -63,20 +63,20 @@ Ejemplo de las variables necesarias:
 ```
 /ingenias
 ├── /rutaCat
-│   └── /:nombre                              →
-│   └── /contar/:nombre                       →
+│   └── /:nombre                              → muestra pelis/series del nombre de la categoria ingresada
+│   └── /contar/:nombre                       → muestra la cantidad de pelis/series del nombre de la categoria ingresada
 │
 ├── /rutasAct
-│   └── /contar/:nombre                       →
-│   └── /mostrar                              →
+│   └── /contar/:nombre                       → muestra la cantidad de pelis/series del nombre del actor ingresado
+│   └── /mostrar                              → muestra el actor junto a las pelis/series en las que trabajo
 │
 ├── /rutasCate
-│   └── /mision/:palabra                      →
-│   └── /pelisGenero/:genero                  →
-│   └── /serieTem                             →
-│   └── /ordenDesc                            →
-│   └── /buscar/:palabra                      →
-│   └── /                    →
+│   └── /mision/:palabra                      → muestra pelis/series en las que aparece la palabra ingresada en su resumen
+│   └── /pelisGenero/:genero                  → muestas las pelis del genero ingresado
+│   └── /serieTem                             → muestra las series con cantidad de temporadas mayor igual a 3
+│   └── /ordenDesc                            → muestra las series en orden descendente segun la cantidad de temporadas
+│   └── /buscar/:palabra                      → muestra las peliculas cuya palabra ingresada este en su titulo o descripcion 
+│   └── /peliTags/:tag1/:tag2                 → muestra las peliculas que contengas uno o ambos tags ingresados 
 │   └── /                    →
 │   └── /                    →
 │   └── /                    →
