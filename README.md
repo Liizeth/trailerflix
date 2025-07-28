@@ -39,7 +39,7 @@ Este proyecto fue desarrollado utilizando las siguientes tecnologías:
 
 ## 📊 Modelo Trailerflix
 <div style="text-align: center;">
-  <img src="img/diagramadb.png" alt="Diagrama de base de datos" width="600"/>
+  <img src="proyectoFinal/diagramaDB/diagramaDB.png" alt="Diagrama de base de datos" width="600"/>
 </div>
 
 ## 🔐 Variables de entorno
@@ -77,10 +77,9 @@ Ejemplo de las variables necesarias:
 │   └── /ordenDesc                            → muestra las series en orden descendente segun la cantidad de temporadas
 │   └── /buscar/:palabra                      → muestra las peliculas cuya palabra ingresada este en su titulo o descripcion 
 │   └── /peliTags/:tag1/:tag2                 → muestra las peliculas que contengas uno o ambos tags ingresados 
-│   └── /actFechaL/:genero                   → actualiza la fecha de lanzamiento del las pelis/series del genero ingresado 
-│   └── /                    →
-│   └── /                    →
-│   └── /                    →
+│   └── /actFechaL/:genero                    → actualiza la fecha de lanzamiento del las pelis/series del genero ingresado 
+│   └── /maxMin                               → muestra las pelis/series con mayor y menor cantidad de actores
+
 ```
 ## 🧮 Consultas SQL
 
@@ -213,7 +212,7 @@ GET  /ingenias/rutasCate/buscar/palabra_a_buscar
 15. Agregar una tabla **"Ranking"** con: ID de película o serie, calificación y comentarios.  
 
 ```
-GET  /ingenias
+
 ```
 
 
