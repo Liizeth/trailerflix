@@ -169,7 +169,7 @@ en este caso solo se limita a las categorias "Películas" y "Serie"
 9. Identificar la película/serie con **más actores** y la que tiene **menos actores**, indicando la cantidad en cada caso.
 
 ```
-GET  /ingenias
+GET  /ingenias/rutasCate/maxMin
 ```
 
 ### 🎬 Contar la cantidad total de películas/series
@@ -197,6 +197,8 @@ GET  /ingenias/rutasCate/ordenDesc
 
 13. Agregar el campo `fecha_lanzamiento` (tipo `DATE`) a la tabla de trabajos fílmicos y actualizar las fechas de los títulos del género **"Aventura"**.
 
+[Creacion del campo fecha_lanzamiento en SQL](diagramaDB/campoFecha.sql)
+
 ```
 GET  /ingenias/rutasCate/actFechaL/:genero
 ```
@@ -212,15 +214,13 @@ GET  /ingenias/rutasCate/buscar/palabra_a_buscar
 ### 🏆 Agregar una tabla Ranking 
 
 15. Agregar una tabla **"Ranking"** con: ID de película o serie, calificación y comentarios.  
+-la tabla la llame comentario 😿 -
+[Creacion de la tabla](diagramaDB/comentario.sql)
 
-
-```
-
-```
 #### Diagrama despues de agregar la tabla 
 <div style="text-align: center;">
   <img src="diagramaDB/diagrama2DB.png" alt="Diagrama de base de datos" width="600"/>
 </div>
 
 ## 👩‍💻 Autor
- [Lizeth](https://github.com/Liizeth/) 🦋<br> 
+ [Lizeth](https://github.com/Liizeth/) 🦋
