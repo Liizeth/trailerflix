@@ -76,7 +76,7 @@ dado un nombre de un genero se muestran las peliculas de este
 
 2. Obtener películas con los tags **"Aventura" y "Ciencia Ficción"**, o **"Aventura" y "Fantasía"**.
 ```
-GET  /ingenias/peliTags/nombre_tag1/ombre_tag2
+GET  /ingenias/peliTags/nombre_tag1/nombre_tag2
 ```
 ```
 dado dos nombres de  tag muestra muestra las peliculas que los contengan 
