@@ -11,7 +11,7 @@
     - [Obtener películas con los tags "Aventura" y "Ciencia Ficción", o "Aventura" y "Fantasía"](#-obtener-películas-con-los-tags)
     - [Visualizar títulos y categorías cuyo resumen contenga la palabra "misión"](#-resúmenes-con-misión)
     - [Listar las series con al menos 3 temporadas](#-series-con-al-menos-3-temporadas)
-    - [Contar cuántas películas o series trabajó el actor Chris Pratt](#-contar-cuántas-películas-o-series-trabajó-el-actor)
+    - [Contar cuántas películas o series trabajó el actor Chris Pratt](#-contar-cuántas-películas-series-trabajó-el-actor)
     - [Mostrar nombre completo de actrices/actores con título, categoría y género](#-actores-con-datos-de-trabajos)
     - [Ver solo películas](#-ver-películas-o-series)
     - [Ver solo series ](#-ver-películas-o-series)
@@ -103,7 +103,7 @@ GET  /ingenias/rutasCate/mision/palabra_a_buscar
 GET  /ingenias/rutasCate/seriesTem
 ```
 
-### 👤 Contar cuántas películas o series trabajó el actor
+### 👤 Contar cuántas películas/series trabajó el actor
 
 5. Contar cuántas películas/series trabajó el actor **Chris Pratt**.
 
